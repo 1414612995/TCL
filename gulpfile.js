@@ -27,7 +27,7 @@ gulp.task('copyfile', function () {
 
 //1.压缩html文件
 gulp.task('uglifyhtml', function () {
-    return gulp.src('src/*.html')
+    return gulp.src('src/html/*.html')
         .pipe(html()) //引入压缩模块
         .pipe(gulp.dest('dist/'));
 });
@@ -41,7 +41,7 @@ gulp.task('uglifyhtml', function () {
 
 //3.sass编译css最终压缩的实现
 gulp.task('compilesass', function () { 
-    return gulp.src('src/sass/*.scss')  
+    return gulp.src('src/style/*.scss')  
         .pipe(plugins.sourcemaps.init()) // 初始化 gulp-sourcemaps 插件  生成.map文件初始化  
         .pipe(plugins.sass({             // 调用 sass 插件，编译 sass 文件
             outputStyle: 'compressed'    //压缩一行
@@ -72,7 +72,7 @@ gulp.task('uglifyjs', function () {
 //gulp-babel@7   @后面的数字代表版本
 //gulp-babel@7  babel-core   babel-preset-es2015
 gulp.task('babel', function () {
-    return gulp.src('src/script/*.js')
+    return gulp.src('src/js/*.js')
         .pipe(babel({//es6转es5
             presets: ['es2015']
         }))
