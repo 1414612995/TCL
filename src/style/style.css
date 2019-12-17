@@ -127,12 +127,14 @@ header {
 }
 
 .banner img {
+  top: 0;
   position: absolute;
   width: 100%;
   height: 550px;
 }
 
 .banner .banner-nav {
+  top: 0;
   position: absolute;
   width: 176px;
   height: 550px;
@@ -165,7 +167,7 @@ header {
 .banner-foot {
   width: 1220px;
   height: 220px;
-  margin: 600px auto;
+  margin: 550px auto;
   position: relative;
 }
 

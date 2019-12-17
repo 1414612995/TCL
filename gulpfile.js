@@ -1,6 +1,6 @@
 const gulp = require('gulp'); //引入gulp模块
-const html = require('gulp-minify-html'); //引入html压缩模块。
-const css = require('gulp-minify-css'); //引入css压缩模块。
+const html = require('gulp-minify-html'); //引入html压缩模块
+const css = require('gulp-minify-css'); //引入css压缩模块
 const sass = require('gulp-sass'); //引入sass编译模块
 const uglifyjs = require('gulp-uglify'); //引入js压缩模块
 const watch = require('gulp-watch'); //引入监听模块
@@ -10,7 +10,6 @@ const es2015 = require('babel-preset-es2015'); //es6转es5主要模块
 const imagemin = require('gulp-imagemin'); //引入图片压缩模块
 const sourcemaps = require('gulp-sourcemaps'); //引入生成.map文件模块
 const plugins = require('gulp-load-plugins')(); //生成.map文件
-
 //gulp：流式操作
 //pipe:管道，流
 //gulp.task():新建一个任务
@@ -18,6 +17,7 @@ const plugins = require('gulp-load-plugins')(); //生成.map文件
 //gulp.dest():输出目录或者输出路径
 //watch() 监听方法，第一个参数监听的文件的路径，第二个参数是监听运行的任务名
 //gulp.parallel() –并行运行任务 
+
 
 //0.复制文件
 gulp.task('copyfile', function () {
@@ -92,6 +92,6 @@ gulp.task('runimg', function () {
 //最终监听
 //每一个任务先跑一次，再进行监听
 gulp.task('default',function(){
-    watch(['src/font/*','src/*.html','src/sass/*.scss','src/script/*.js','src/img/*.{png,jpg,gif,ico}'],gulp.parallel('copyfile','uglifyhtml','compilesass','babel','runimg'));
+    watch(['src/font/*','src/html/*.html','src/style/*.scss','src/js/*.js','src/img/*.{png,jpg,gif,ico}'],gulp.parallel('copyfile','uglifyhtml','compilesass','babel','runimg'));
 });
 
