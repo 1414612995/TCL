@@ -1,5 +1,5 @@
+
 function fn(){
-    //1.获取元素
     const oBox = document.querySelector('.box');
     const moveUl = document.querySelector('.box ul');
     let picLi = document.querySelectorAll('.box ul li');
@@ -9,7 +9,6 @@ function fn(){
     let index = 0;
     let flag = true;
     let timer = null;
-
     //2.改变布局，计算moveUl的宽度
     let firstLi = picLi[0].cloneNode(true); //克隆moveUl第一个子元素
     let lastLi = picLi[picLi.length - 1].cloneNode(true); //克隆moveUl最后一个子元素
@@ -18,7 +17,7 @@ function fn(){
     //计算moveUl的宽度
     picLi = document.querySelectorAll('.box ul li'); //重新获取li的元素个数
     //一个li的宽度
-    let liwidth = picLi[0].offsetWidth; //790
+    let liwidth = picLi[0].offsetWidth; 
     //设置moveUl的宽度
     moveUl.style.width = picLi.length * liwidth + 'px';
     //设置moveUl的位置
@@ -32,8 +31,6 @@ function fn(){
             btnLi[index].className = 'active';
         }
     }
-
-
     //4.给左右箭头添加事件
     oRight.onclick = function () {
         if (flag) {
@@ -47,9 +44,7 @@ function fn(){
                 btnLi[index].className = 'active';
             }
         }
-
     }
-
     oLeft.onclick = function () {
         if (flag) {
             flag = false;
@@ -62,10 +57,7 @@ function fn(){
                 btnLi[index].className = 'active';
             }
         }
-
     }
-
-    //封装切换的过程
     function tabswitch() {
         for (let j = 0; j < btnLi.length; j++) {
             btnLi[j].className = '';
@@ -84,23 +76,20 @@ function fn(){
             flag = true;
         });
     }
-
     //自动轮播
     timer = setInterval(() => {
-        oRight.onclick(); //oRight.click()
+        oRight.onclick();
     }, 2000);
-
     oBox.onmouseover = function () {
         oRight.style.display='block';
         oLeft.style.display='block';
         clearInterval(timer);
     };
-
     oBox.onmouseout = function () {
         oRight.style.display='none';
         oLeft.style.display='none';
         timer = setInterval(() => {
-            oRight.onclick(); //oRight.click()
+            oRight.onclick(); 
         }, 2000);
     };
 }

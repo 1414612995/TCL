@@ -169,6 +169,16 @@ header {
   cursor: pointer;
 }
 
+.banner-box .box-nav .box-nav-ul li .nav-show {
+  display: none;
+}
+
+.banner-box .box-nav .box-nav-ul li:hover .nav-show {
+  display: block;
+  width: 800px;
+  height: 600px;
+}
+
 .banner-box .box-nav .box-nav-ul li:hover {
   background: rgba(255, 255, 255, 0.9);
 }
@@ -230,7 +240,7 @@ header {
 
 .banner-box .box .left,
 .banner-box .box .right {
-  font-size: 100px;
+  font-size: 60px;
   color: white;
   position: absolute;
   top: 50%;
